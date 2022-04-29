@@ -89,3 +89,64 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: faq/1
+  examples: |
+    - What is LMS?
+    - What is the meaning of LMS?
+
+- intent: faq/2
+  examples: |
+    - How does LMS help students?
+    - What does lms do?
+
+- intent: faq/3
+  examples: |
+    - Is there any creteria for the students to join?
+    - Which year students are eligible?
+
+- intent: faq/4
+  examples: |
+    - Can students cheat in the test?
+    - Is malpractise monitored?
+    - Can students copy during test hours?
+
+- intent: faq/5
+  examples: |
+    - How many logins does LMS consists of? 
+
+- intent: faq/6
+  examples: |
+    - What does the power of staff in LMS?
+    - What all can be done by the staff incharge of students?
+
+
+- rule: respond to FAQs
+  steps:
+  - intent: faq
+  - action: utter_faq
+
+- rule: respond to happy user mood
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- rule: respond to sad user mood
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+
+- rule: respond to greetings
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: respond to user yes
+  steps:
+  - intent: affirm
+  - action: utter_happy
+
+- rule: respond to user no
+  steps:
+  - intent: deny
+  - action: utter_goodbye
